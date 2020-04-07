@@ -1,0 +1,16 @@
+
+ <div class="container">
+    <form [formGroup]="myform" (ngSubmit)="delete()">
+      <label>Carousel Id</label>
+    <input type="Id" class="inpText6"  placeholder="Enter Id here" formControlName="CarouselId"><br>
+    <span class="errors" *ngIf = "submitted && CarouselId.errors">*Please enter your Carousel Id 
+    </span><br>     
+    
+
+       <button class="cancel">Cancel</button>
+       <button class="back" (click)="back()">Back</button>
+        <button class="delete" >Delete</button>
+
+    </form>
+    <div class="decorator">{{variable}}</div>
+</div>

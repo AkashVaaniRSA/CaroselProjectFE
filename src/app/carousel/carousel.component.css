@@ -1,0 +1,107 @@
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+  }
+  
+  li {
+    float: left;
+  }
+  
+  li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+  }
+  
+  li a:hover {
+    background-color: #111;
+  }
+ 
+ .copyright {
+    margin-top: 20px;
+    text-align: center;
+    align-content: center;
+}
+
+input.ng-touched.ng-invalid
+{
+  border-color: red;
+}
+
+input.ng-dirty.ng-invalid
+{
+  border-color:red;
+}
+
+
+.container
+{
+    background-color: whitesmoke;
+    position:absolute;
+    top:20%;
+    left:10%;
+    padding: 2% 2% 2% 2%;
+}
+.inpText1
+{
+    position: relative;
+    left: 10%;
+}
+.inpText2
+{
+    position: relative;
+    left: 17%;
+}
+.inpText5
+{
+    position: relative;
+    left: 14%;
+}
+.inpText3
+{
+    position: relative;
+    left: 17%;
+}
+.inpText4
+{
+    position: relative;
+    left: 20%;
+}
+.cancel
+{
+position: relative;
+left: 40%;
+}
+.cancel:hover{
+    background-color: tomato;
+    color: white;
+}
+.save:hover{
+    background-color:blue;
+    color: white;
+}
+.save
+{
+    position: relative;
+     left: 15%
+}
+.errors
+{
+    color:red;
+    font-size: 15px;
+}
+.color
+{
+    position: absolute;
+    top:90%;
+    left:20%;
+}
+.decorator
+{
+color:blue;
+}

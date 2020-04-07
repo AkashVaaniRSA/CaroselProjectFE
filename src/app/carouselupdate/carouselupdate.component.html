@@ -1,0 +1,77 @@
+<!-- 
+  <div class="container">
+    <form [formGroup]="myForm" (ngSubmit)="update()">
+      <label>Carousel Id</label>
+    <input type="Id" class="inpText6"  placeholder="Enter Id here" formControlName="carouselId"><br>
+    <span class="errors" *ngIf = "submitted && carouselId.errors">*Please enter your Carousel Id 
+    </span><br>     
+    <label>Application Name</label>
+    <select class="inpText1" (change)="selectApplicationName($event)" formControlName="applicationName">
+      <option [hidden]="true">--select--</option>
+        <option *ngFor="let app of appData">{{app.ApplicationName}}</option>
+    </select><br>
+    <span class="errors" *ngIf = "submitted && applicationName.errors">*Please enter your Application name
+    </span><br>
+    <label>User Name</label>
+    <select class="inpText2" (change)="selectUser($event)" formControlName="user">
+      <option [hidden]="true">--select--</option>
+        <option *ngFor="let app of appData">{{app.UserName}}</option>
+    </select><br>
+    <span class="errors" *ngIf = "submitted && user.errors">*Please enter your User name
+        </span><br>
+    <label>Carousel Data</label>
+    <textarea name="comment" class="inpText5"  placeholder="Enter text here..." formControlName="carouselData"></textarea><br>
+    <span class="errors" *ngIf = "submitted && carouselData.errors">*Please enter your Carousel data 
+    </span><br>
+    <label>Valid From</label>
+    <input type="date" class="inpText3" (change)="fromDate($event)" formControlName ="validForm"><br>
+    <span class="errors" *ngIf = "submitted && validForm.errors">*Please enter your Date
+        </span><br>
+    <label>Valid To</label>
+    <input type="date" class="inpText4" (change)="toDate($event)" formControlName="to"><br>
+    <span class="errors" *ngIf = "submitted && to.errors">*Please enter your Date
+       </span> <br>
+
+       <button class="cancel">Cancel</button>&nbsp;&nbsp;&nbsp;&nbsp;
+       <button class="back" (click)="back()">Back</button>&nbsp;&nbsp;&nbsp;&nbsp;
+       <button class="update">Update</button>&nbsp;&nbsp;&nbsp;&nbsp;
+    </form>
+    <div class="decorator">{{variable}}</div>
+</div>
+   -->
+
+   
+   <div class="container">
+    <label>Carousel Id</label>
+  <input type="Id" class="inpText6"  placeholder="Enter Id here" [(ngModel)]="carousel.CarouselId"><br>
+<br>     
+  <label>Application Name</label>
+  <select class="inpText1" (change)="selectApplicationName($event)" [ngModel]="carousel.ApplicationName"  [ngModelOptions]="{standalone: true}">
+  
+
+    <option [hidden]="true">--select--</option>
+      <option *ngFor="let app of appData">{{app.ApplicationName}}</option>
+  </select><br>
+<br>
+  <label>User Name</label>
+  <select class="inpText2" (change)="selectUser($event)" [ngModel]="carousel.UserName"   [ngModelOptions]="{standalone: true}">
+    <option [hidden]="true">--select--</option>
+      <option *ngFor="let app of appData">{{app.UserName}}</option>
+  </select><br>
+<br>
+  <label>Carousel Data</label>
+  <textarea name="comment" class="inpText5"  placeholder="Enter text here..." [(ngModel)]="carousel.CarouselData" ></textarea><br>
+<br>
+  <label>Valid From</label>
+  <input type="date" class="inpText3" (change)="fromDate($event)"[ngModel]="carousel.ValidFrom|slice:0:10" [ngModelOptions]="{standalone: true}"><br>
+<br>
+  <label>Valid To</label>
+  <input type="date" class="inpText4" (change)="toDate($event)" [ngModel]="carousel.ValidTo|slice:0:10"    [ngModelOptions]="{standalone: true}"><br>
+ <br>
+
+     <button class="cancel">Cancel</button>&nbsp;&nbsp;&nbsp;&nbsp;
+     <button class="back" (click)="back()">Back</button>&nbsp;&nbsp;&nbsp;&nbsp;
+     <button class="update" (click)="update()">Update</button>&nbsp;&nbsp;&nbsp;&nbsp;
+  <div class="decorator">{{variable}}</div>
+</div>
+

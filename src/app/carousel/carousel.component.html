@@ -1,0 +1,86 @@
+<html>
+  <body>
+  
+  <ul>
+    <li><a class="active" href="#application">Application</a></li>
+    <li><a href="#user">User</a></li>
+    <li><a href="#carousel">Carousel</a></li>
+  </ul>
+
+
+  
+  <div class="container">
+    <form [formGroup]="myForm" (ngSubmit)="save()">
+    <label>Application Name</label>
+    <select class="inpText1" (change)="selectApplicationName($event)" formControlName="applicationName">
+      <option [hidden]="true">--select--</option>
+        <option *ngFor="let app of appData">{{app.ApplicationName}}</option>
+    </select><br>
+    <span class="errors" *ngIf = "submitted && applicationName.errors">*Please enter your Application name
+    </span><br>
+    <label>User Name</label>
+    <select class="inpText2" (change)="selectUser($event)" formControlName="user">
+      <option [hidden]="true">--select--</option>
+        <option *ngFor="let app of appData">{{app.UserName}}</option>
+    </select><br>
+    <span class="errors" *ngIf = "submitted && user.errors">*Please enter your User name
+        </span><br>
+    <label>Carousel Data</label>
+    <textarea name="comment" class="inpText5"  placeholder="Enter text here..." formControlName="carouselData"></textarea><br>
+    <span class="errors" *ngIf = "submitted && carouselData.errors">*Please enter your Carousel data        </span><br>
+    <label>Valid From</label>
+    <input type="date" class="inpText3" (change)="fromDate($event)" formControlName="validForm"><br>
+    <span class="errors" *ngIf = "submitted && validForm.errors">*Please enter your Date
+        </span><br>
+    <label>Valid To</label>
+    <input type="date" class="inpText4" (change)="toDate($event)" formControlName="to"><br>
+    <span class="errors" *ngIf = "submitted && to.errors">*Please enter your Date
+       </span> <br>
+
+       <button class="cancel">Cancel</button>
+       <button class="save">Save</button>
+
+    </form>
+    <div class="decorator">{{variable}}</div>
+</div>
+
+
+<div> 
+    <div class="color">
+        <table class="table table-bordered">
+            <thead class="thead-dark">
+              <tr>
+                <th scope="col" bgcolor="black"><font size="3">Application Name</font></th>
+                <th scope="col" bgcolor="black"><font size="3">User Name</font></th>
+                <th scope="col" bgcolor="black"><font size="3">Carousel Data</font></th>
+                <th scope="col" bgcolor="black"><font size="3">Update/Delete</font></th>
+                
+              
+              </tr>
+            </thead>
+             <tbody>
+              <tr *ngFor="let getData of appData">
+                <td><font size="3">{{getData.ApplicationName}}</font></td>
+                <td><font size="3">{{getData.UserName}}</font></td>
+                <td><font size="3">{{getData.CarouselData}}</font></td>
+     
+               <td><button type="button" class="btn btn-primary btn-xs"(click)="Update(getData)">Update</button>&nbsp;
+                <button type="button" class="btn btn-primary btn-xs"(click)="Delete()">Delete</button></td> 
+              
+
+               
+              </tr>
+              
+             </tbody>
+        </table>
+          
+        <div class="copyright">
+          <p>Copyright ©2020 All rights reserved</p>
+        </div>
+        
+          
+      </div>        
+    </div>
+
+</body>
+</html> 
